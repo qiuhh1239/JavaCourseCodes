@@ -16,8 +16,9 @@ public class HttpClientTest {
 	public static void main(String[] args) throws ClientProtocolException, IOException {
 		// TODO Auto-generated method stub
 
+		String httpUrl = "http://localhost:8081";
 		CloseableHttpClient httpclient = HttpClients.createDefault();
-		HttpGet httpGet = new HttpGet("http://localhost:8081");
+		HttpGet httpGet = new HttpGet(httpUrl);
 		CloseableHttpResponse response1 = httpclient.execute(httpGet);
 		
 		try {
