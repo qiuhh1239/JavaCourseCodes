@@ -1,6 +1,4 @@
-# netty-gateway
-
-```
-   
-
-```
+1. [HttpClientTest.java](https://github.com/qiuhh1239/JavaCourseCodes/blob/main/week03/week03Code/src/main/java/com/geektime/week03Code/HttpClientRequest/HttpClientTest.java)是客户端请求，请求本地80端口
+2. [BackendServer.java](https://github.com/qiuhh1239/JavaCourseCodes/blob/main/week03/week03Code/src/main/java/com/geektime/week03Code/BackendServer/BackendServer.java)和[BackendServer2.java](https://github.com/qiuhh1239/JavaCourseCodes/blob/main/week03/week03Code/src/main/java/com/geektime/week03Code/BackendServer/BackendServer2.java)监听 8088和8089端口
+3. [NettyServerApplication.java](https://github.com/qiuhh1239/JavaCourseCodes/blob/main/week03/week03Code/src/main/java/io/github/kimmking/gateway/NettyServerApplication.java) 是网关实现，监听80端口，并向 8088和8089转发消息
+4. [HttpInboundHandlerProxyBizFilter.java](https://github.com/qiuhh1239/JavaCourseCodes/blob/main/week03/week03Code/src/main/java/com/geektime/week03Code/filter/HttpInboundHandlerProxyBizFilter.java) 网关实现过滤器，添加一个header属性，在[HttpOutboundHandler.java](https://github.com/qiuhh1239/JavaCourseCodes/blob/main/week03/week03Code/src/main/java/io/github/kimmking/gateway/outbound/httpclient4/HttpOutboundHandler.java)会获取这个头部属性值，并返回HttpClientTest的相应body中
