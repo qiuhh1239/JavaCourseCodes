@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Built-By: Administrator
 Build-Jdk: 15.0.2
-Implementation-Title: week03Code-netty-gateway-nio02
+Implementation-Title: week03Code
 Implementation-Version: 0.0.1-SNAPSHOT
 Implementation-Vendor-Id: io.github.kimmking
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
