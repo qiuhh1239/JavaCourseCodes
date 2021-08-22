@@ -8,7 +8,9 @@ public class ProxyBizFilter implements HttpRequestFilter {
 
     @Override
     public void filter(FullHttpRequest fullRequest, ChannelHandlerContext ctx) {
+    	
         fullRequest.headers().set("proxyBizFilter", "netty");
+        
     }
 
 }
