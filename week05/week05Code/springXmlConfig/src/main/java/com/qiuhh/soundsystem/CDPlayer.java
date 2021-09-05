@@ -8,7 +8,7 @@ public class CDPlayer implements MediaPlayer {
 	}
 
   public void play() {
-    cd.paly();
+    cd.play();
   }
 
 
