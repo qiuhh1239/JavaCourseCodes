@@ -7,7 +7,6 @@ import java.sql.SQLException;
 public class H2Connection {
 	/**
 	 * @param args
-         * @author www.zuidaima.com
 	 */
 	private H2ServerStart server;
 	public Connection connInit() {

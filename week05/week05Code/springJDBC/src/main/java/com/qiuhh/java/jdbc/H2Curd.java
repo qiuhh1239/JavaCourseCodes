@@ -9,10 +9,10 @@ import java.util.List;
 
 public class H2Curd {
 	
-	public boolean createData(Connection conn,int id) {
+	public boolean createData(Connection conn,int id,String city) {
 		
 		// 添加一条语句
-		 String insertSql = "insert into product values("+id+")";
+		 String insertSql = "insert into city values("+id+",'"+city+"')";
 		 Statement stmt = null;
 		try {
 			stmt = conn.createStatement();
@@ -38,13 +38,14 @@ public class H2Curd {
 				 int id = rs.getInt("id");
 				 String cityName = rs.getString("city_name");
 				 city = new City(id,cityName);
+				 
+				 System.out.println(city);
 				 result.add(city);
 				 
 			 }
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
 		 return result;
 	}
 	

@@ -13,6 +13,14 @@ public class H2ServerStart {
      */
     public void startH2() {
         try {
+        	if(server != null) {
+        		boolean bo = server.isRunning(true);
+        		System.out.println("服务状态："+bo);
+        		if(bo) {
+        			return;
+        		}
+        	}
+        	
             System.out.println("正在启动h2数据库...");
             //使用org.h2.tools.Server这个类创建一个H2数据库的服务并启动服务，由于没有指定任何参数，那么H2数据库启动时默认占用的端口就是8082
             server =  org.h2.tools.Server.createTcpServer("-tcpPort", "9123").start();
