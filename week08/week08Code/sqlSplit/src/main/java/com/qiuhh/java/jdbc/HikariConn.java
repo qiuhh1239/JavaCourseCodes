@@ -29,7 +29,8 @@ import com.zaxxer.hikari.HikariDataSource;
 
 	        HikariConfig config = new HikariConfig();
 	        config.setMaximumPoolSize(10);
-	        config.setDriverClassName("com.mysql.cj.jdbc.Driver");
+	        //com.mysql.cj.jdbc.Driver
+	        config.setDriverClassName("com.mysql.jdbc.Driver");
 	       // config.setJdbcUrl("jdbc:mysql://127.0.0.1:3306/e_commerce_platform");
 	        config.setJdbcUrl("jdbc:mysql://127.0.0.1:3307/sharding_db");
 	        config.setUsername("root");

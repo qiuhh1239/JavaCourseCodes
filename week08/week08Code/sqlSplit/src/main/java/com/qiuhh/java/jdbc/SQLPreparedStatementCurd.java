@@ -99,7 +99,7 @@ public class SQLPreparedStatementCurd {
 	 * @param num   批量插入数
 	 * @return
 	 */
-	public boolean batchCreateData(Connection conn,int userId,double money,int num) {
+	public boolean batchCreateData(Connection conn,List<Orders> ordersArr) {
 		
 		// 添加一条语句
 		 String insertSql = "insert into orders(user_id,money) values(?,?)";
@@ -107,10 +107,26 @@ public class SQLPreparedStatementCurd {
 		try {
 			stmt = conn.prepareStatement(insertSql);
 			
-			for(int i=0;i<num;i++) {
+			int userId = 0 ;
+			double money = 0;
+			Orders order = null;
+			for(int i=0;i<ordersArr.size();i++) {
+				order = ordersArr.get(i);
+				userId = order.getUser_id();
+				money = order.getMoney();
+				
 				stmt.setInt(1, userId);
 				stmt.setDouble(2, money);
 				stmt.addBatch();
+				
+				if(i % 500 == 0) {
+                    
+                    //2.  攒够500,执行一次batch
+					stmt.executeBatch();
+                    
+                    //3. 清空batch
+					stmt.clearBatch();
+                }
 			}
 		
 			stmt.executeBatch();

@@ -121,8 +121,8 @@ rules:
      actualDataNodes: ds_${0..1}.orders_${0..15}
      tableStrategy:
        standard:
-         shardingColumn: id
-         shardingAlgorithmName: orders_id_inline
+         shardingColumn: user_id
+         shardingAlgorithmName: user_id_inline
      keyGenerateStrategy:
        column: id
        keyGeneratorName: snowflake
@@ -139,7 +139,7 @@ rules:
 #    - t_order,t_order_item
  defaultDatabaseStrategy:
    standard:
-     shardingColumn: user_id
+     shardingColumn: id
      shardingAlgorithmName: database_inline
  defaultTableStrategy:
    none:
@@ -148,11 +148,11 @@ rules:
    database_inline:
      type: INLINE
      props:
-       algorithm-expression: ds_${user_id % 2}
-   orders_id_inline:
+       algorithm-expression: ds_${id % 2}
+   user_id_inline:
      type: INLINE
      props:
-       algorithm-expression: orders_${id % 16}
+       algorithm-expression: orders_${user_id % 16}
    
  
  keyGenerators:

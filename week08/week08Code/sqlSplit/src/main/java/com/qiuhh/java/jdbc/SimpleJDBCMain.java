@@ -3,6 +3,9 @@ package com.qiuhh.java.jdbc;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class SimpleJDBCMain {
 
@@ -15,14 +18,37 @@ public class SimpleJDBCMain {
 		try {
 			HikariConn.getInstance().start();
 			 conn = HikariConn.getInstance().getConnection();
-			 preparedCurd(conn);
+			// preparedCurd(conn);
+			 preparedBatchCreateData(conn);
 			 HikariConn.getInstance().stop();
 		} catch (IOException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		System.out.println("执行结束");
      
 	}
+	 public static void preparedBatchCreateData(Connection conn) {
+		  SQLPreparedStatementCurd curd2 = new SQLPreparedStatementCurd();
+		 System.out.println("批量添加");
+		 
+		    List<Orders> list = new ArrayList<Orders>();
+		    Orders orders = null;
+		    Random rdId = new Random();
+		    for(int i=0;i<10000;i++) {
+		    	orders = new Orders();
+		    	orders.setMoney(rdId.nextInt(500));
+		    	orders.setUser_id(rdId.nextInt(500));
+		    	list.add(orders);
+		    }
+		    
+		    long curr = System.currentTimeMillis();
+			curd2.batchCreateData(conn, list);
+			System.out.println(System.currentTimeMillis() - curr);
+		 
+	 }
+	
 	  public static void preparedCurd(Connection conn) {
 		  SQLPreparedStatementCurd curd2 = new SQLPreparedStatementCurd();
 			curd2.createData(conn, 1,100);

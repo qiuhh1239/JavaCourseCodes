@@ -12,8 +12,18 @@ File Encoding         : 65001
 
 Date: 2021-09-26 23:03:59
 */
-create database e_commerce_platform;
-use e_commerce_platform;
+
+/**
+ * 创建数据库
+ */
+CREATE DATABASE IF NOT EXISTS  `e_commerce_platform`  DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ;
+
+CREATE DATABASE IF NOT EXISTS `e_commerce_platform_1` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin ;
+
+/**
+ * 在sharding proxy 控制台创建表
+ */
+use sharding_db;
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
