@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: Administrator
+Build-Jdk: 15.0.2
+Implementation-Title: rpcfx-demo-api-week09Code
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: io.qhh
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/week09Code-rpc/rpcfx-demo-api-week09Code
+Created-By: Maven Integration for Eclipse
+
