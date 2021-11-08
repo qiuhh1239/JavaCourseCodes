@@ -20,5 +20,12 @@ dataSourceCommon，password 后加密码，密码前需要有空格
 [KafkaDemoApplication.java](spring-kafka-example/src/main/java/bytes/qhh/kafkaApp/KafkaDemoApplication.java)
 主方法，producer生成数据，[KafkaConsumerListener.java](spring-kafka-example/src/main/java/bytes/qhh/kafkaApp/KafkaConsumerListener.java)消费端在控制台打印信息
 
+6.（必做）思考和设计自定义 MQ 第二个版本或第三个版本，写代码实现其中至少一个功能点，把设计思路和实现代码，提交到 GitHub。
+
+第二个版本：自定义 Queue
+
+[MyQueue.java](qmq-core/src/main/java/bytes/qhh/qmq/core/MyQueue.java)
+自定义数组，当前写入位置rightIndex,消费位置leftIndex;
+
 
 

@@ -16,6 +16,7 @@
 	</properties>
 	<modules>
 	  <module>spring-kafka-example</module>
+	  <module>qmq-core</module>
    </modules>
 
 </project>
