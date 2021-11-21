@@ -1,4 +1,4 @@
-###### 串行GC(UseSerialGC)
+## 串行GC(UseSerialGC)
 三种GC方式
 
 
@@ -31,7 +31,7 @@ sb -u http://localhost:8088/api/hello -c 20 -N 60
 
 
 
-###### 并行GC
+## 并行GC
 
 
 
@@ -53,7 +53,7 @@ sb -u http://localhost:8088/api/hello -c 20 -N 60
 ```
 
 
-###### CMS
+### CMS
 1.年轻代回收  ParNew 回收
 ```
 
@@ -76,7 +76,7 @@ sb -u http://localhost:8088/api/hello -c 20 -N 60
 2021-08-15T15:33:03.822+0800: 2.154: [CMS-concurrent-reset: 0.001/0.001 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
 ```
 
-###### G1
+## G1
 1、年轻代模式转移暂停（Evacuation Pause）
 ```
 2021-08-15T15:56:28.156+0800: 0.181: [GC pause (G1 Evacuation Pause) (young) 33M->16M(512M), 0.0044696 secs]

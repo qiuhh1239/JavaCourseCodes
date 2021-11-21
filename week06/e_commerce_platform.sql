@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50732
 File Encoding         : 65001
 
-Date: 2021-09-11 20:18:36
+Date: 2021-09-26 20:22:16
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -27,7 +27,7 @@ CREATE TABLE `commodity` (
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of commodity
@@ -44,7 +44,7 @@ CREATE TABLE `consignee_address` (
   `consignee_name` varchar(24) DEFAULT NULL COMMENT '收件人姓名',
   `consignee_telephone` int(11) DEFAULT NULL COMMENT '收件人电话',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of consignee_address
@@ -63,7 +63,7 @@ CREATE TABLE `orders` (
   `order_status` tinyint(2) DEFAULT NULL,
   `consignee_id` bigint(24) DEFAULT NULL COMMENT '收件人',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of orders
@@ -79,7 +79,7 @@ CREATE TABLE `orders_commodity` (
   `commodity_id` bigint(24) DEFAULT NULL COMMENT '商品ID',
   `num` tinyint(2) DEFAULT NULL COMMENT '商品数量',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of orders_commodity
@@ -97,7 +97,7 @@ CREATE TABLE `user` (
   `identit_card` char(18) DEFAULT NULL COMMENT '身份证号码',
   `user_telephone` int(11) DEFAULT NULL COMMENT '手机号码',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of user

@@ -3,14 +3,12 @@ package bytes.qhh.kafka.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-@RequestMapping(path="/api/kafka/")
+@RestController
 public class KafkaProducerController {
     @Autowired
     private KafkaTemplate<String, Object> kafkaTemplate;
@@ -28,8 +26,8 @@ public class KafkaProducerController {
         return true;
     }
     
-    @RequestMapping("test")
-    @ResponseBody
+    @RequestMapping("/test")
+	/*    @ResponseBody*/
     public String test() {
         System.out.println("hello world!");
         return "ok";

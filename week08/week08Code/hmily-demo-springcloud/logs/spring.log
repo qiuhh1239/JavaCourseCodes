@@ -23677,3 +23677,8 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_231]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_231]
 
+2021-09-28 03:17:50.061  INFO 9916 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5713 ms
+2021-09-28 03:17:51.745 DEBUG 9916 --- [main] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-09-28 03:18:12.144  INFO 9916 --- [http-nio-0.0.0.0-8090-exec-10] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-09-28 03:18:12.162  INFO 9916 --- [http-nio-0.0.0.0-8090-exec-10] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2021-09-28 03:18:12.252 ERROR 9916 --- [http-nio-0.0.0.0-8090-exec-10] org.dromara.hmily.spi.ExtensionLoader    : not found service provider for : org.dromara.hmily.core.service.HmilyTransactionHandlerFactory

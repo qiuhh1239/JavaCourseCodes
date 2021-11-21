@@ -1,13 +1,12 @@
 package bytes.qhh.kafkaApp;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
+@RestController
 public class KafkaDemoApplication {
 
     public static void main(String[] args) {
@@ -15,18 +14,24 @@ public class KafkaDemoApplication {
     }
 
 
-    @Autowired
-    private KafkaTemplate<String, Object> kafkaTemplate;
+	/*   @Autowired
+	private KafkaTemplate<String, Object> kafkaTemplate;
+	
+	
+	@Bean
+	ApplicationRunner run() {
+	    return args -> {
+	        new Thread(() -> {
+	        	 kafkaTemplate.send("test-topic", "test"+System.currentTimeMillis());
+	        }).start();
+	
+	    };
+	}*/
     
-
-    @Bean
-    ApplicationRunner run() {
-        return args -> {
-            new Thread(() -> {
-            	 kafkaTemplate.send("test-topic", "test"+System.currentTimeMillis());
-            }).start();
-
-        };
+    @RequestMapping("/test1")
+    public String test() {
+        System.out.println("hello world!");
+        return "ok";
     }
 
 }
